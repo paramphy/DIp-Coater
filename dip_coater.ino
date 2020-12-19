@@ -19,7 +19,8 @@
 
 // initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-int pos = 0, dip = 0, set = 50, dly = 100;
+int pos = 0, dip = 0, set = 50, dly = 500;
+// pos, dip are the iniciators. set = number of dips wanted, dly = delay between changing position 
 
 Servo servo_9;
 
@@ -32,20 +33,25 @@ void setup() {
 }
 
 void loop() {
+  // going down
   if(dip <= set)
   {
      for (pos = 0; pos <= 180; pos += 1) {
     // tell servo to go to position in variable 'pos'
     servo_9.write(pos);
-    // wait 15 ms for servo to reach the position
+    // wait 'dly' ms for servo to reach the position
     delay(dly); // Wait for dly
   }
+  // going up
   for (pos = 180; pos >= 0; pos -= 1) {
     // tell servo to go to position in variable 'pos'
     servo_9.write(pos);
-    // wait 15 ms for servo to reach the position
+    // wait 'dly' ms for servo to reach the position
     delay(dly);// Wait for dly
   }
+  // delay after one full cycle
+  delay(10000);
+  // increase the dip count
   dip = dip + 1;
   
   // set the cursor to column 0, line 1
