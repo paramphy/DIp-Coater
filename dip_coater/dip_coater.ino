@@ -11,7 +11,8 @@
  This code is in the public domain.
 
  https://github.com/paramphy/DIp-Coater.git
- */
+ 
+*/
 
 // include the library code:
 #include <LiquidCrystal.h>
@@ -58,10 +59,15 @@ void loop() {
   // (note: line 1 is the second row, since counting begins with 0):
   lcd.setCursor(0, 1);
   // print the number of seconds since reset:
+  lcd.print("Number of Dips = ");
+  Serial.print("Number of Dips = ");
   lcd.print(dip);
+  Serial.print(dip);
   lcd.print(" t(s)=");
+  Serial.print(" t(s)= ");
   lcd.print(millis()/1000);
-  
+  Serial.print(millis()/1000);
+  Serial.print("\n");
   }
 }
  
