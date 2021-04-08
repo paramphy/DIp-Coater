@@ -26,6 +26,7 @@ int pos = 0, dip = 0, set = 50, dly = 500;
 Servo servo_9;
 
 void setup() {
+  Serial.begin(9600);
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 5);
   servo_9.attach(9);
