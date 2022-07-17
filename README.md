@@ -8,4 +8,7 @@ Arduino Code for Dip Coater instrument
 ## Circuit diagram
 ![Circuit Diagram](CIrcuit.png)
 
-## 
+
+
+[![DOI](https://zenodo.org/badge/321874403.svg)](https://zenodo.org/badge/latestdoi/321874403)
+
